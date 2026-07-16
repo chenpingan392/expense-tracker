@@ -32,3 +32,20 @@ export_csv(transactions, csv_file)
 for transaction in transactions:
     transaction.show()
     print("--------------------")
+total_income = sum(
+    transaction.amount
+    for transaction in transactions
+    if transaction.transaction_type == "收入"
+)
+
+total_expense = sum(
+    transaction.amount
+    for transaction in transactions
+    if transaction.transaction_type == "支出"
+)
+
+balance = total_income - total_expense
+
+print(f"总收入：{total_income:.2f}元")
+print(f"总支出：{total_expense:.2f}元")
+print(f"当前余额：{balance:.2f}元")

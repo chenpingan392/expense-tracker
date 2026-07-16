@@ -24,3 +24,9 @@
 
 ```powershell
 python -m app.main
+
+保存后查看变化：
+
+```powershell
+git status
+git diff
